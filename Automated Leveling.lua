@@ -23,6 +23,9 @@ digIndex = 3
 -- Set your mount
 mount = "Bicycle"
 
+-- List of Pokemons that you would like to catch while leveling
+catchList = {"Jigglypuff", "Electabuzz", "Chansey"}
+
 --------------------------------------------------------------
 -- Only touch the code below if you know what you are doing --
 --------------------------------------------------------------
@@ -115,7 +118,7 @@ function onPathAction ()
 end
 
 function onBattleAction ()
-	if isWildBattle() and isOpponentShiny() then
+	if isWildBattle() and (isOpponentShiny() or not isAlreadyCaught () or isPokemonInList ()) then
 		if useItem("Ultra Ball") or useItem("Great Ball") or useItem("Pokeball") then
 			return
 		end
@@ -134,15 +137,35 @@ function onDialogMessage(message)
 	end
 end
 
--------------------------
--- Comparison Function --
--------------------------
+-------------------------------------
+-- Comparison or Checking Function --
+-------------------------------------
 function isOnMap (mapName)
 	if getMapName () == mapName then
 		return true
 	else
 		return false
 	end
+end
+
+function isPokemonInList ()
+	if catchList[1] ~= "" then
+		for i = 1, tableLength (catchList), 1 do
+			if getOpponentName() == catchList[i] then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
+function tableLength (t)
+	local count = 0
+		for _ in pairs(t) do 
+			count = count + 1 
+		end
+	return count
 end
 
 ------------------------
