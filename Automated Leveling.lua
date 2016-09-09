@@ -4,7 +4,7 @@
 -- It will be better if the pokemon that you want to level is at least level 8
 -- Put the pokemon that you want to level in the FIRST place
 -- If your pokemon level is less than 15, start the script on Route 4
--- If your pokemon level between 15 and 24, start the script on Route 10
+-- If your pokemon level between 15 and 24, start the script on Route 10 (Near the Pokecenter at Route 10)
 -- If your pokemon level between 25 and 34, start the script in Digletts Cave Entrance 2
 -- If your pokemon level between 35 and 54, start the script on Route 13
 -- If your pokemon level is greater than 54, start the script on Victory Road 3F
@@ -18,7 +18,7 @@
 -- If this is false
 --    You will then need a pokemon in your team that can SURF
 digMountains = true
-digIndex = 3
+digIndex = 2
 
 -- Set your mount
 mount = "Bicycle"
@@ -95,7 +95,8 @@ function onPathAction ()
 			if isOnMap ("Route 13") or isOnMap ("Route 12") or isOnMap ("Route 11 Stop House") or
 				isOnMap ("Route 11") or isOnMap ("Route 2") or isOnMap ("Route 2 Stop3") or
 				isOnMap ("Viridian City") or isOnMap ("Pokecenter Viridian") or isOnMap ("Route 22") or 
-				isOnMap ("Pokemon League Reception Gate") or isOnMap ("Victory Road Kanto 1F") or isOnMap ("Victory Road Kanto 2F") then
+				isOnMap ("Pokemon League Reception Gate") or isOnMap ("Victory Road Kanto 1F") or isOnMap ("Victory Road Kanto 2F") or
+				isOnMap ("Berry Tower Reception Kanto") then
 				moveFromThirteenToVictoryWithDig ()
 			else
 				levelOnVictoryRoad ()
@@ -370,6 +371,8 @@ function moveFromThirteenToVictoryWithDig ()
 		moveToMap ("Victory Road Kanto 2F")
 	elseif getMapName () == "Victory Road Kanto 2F" then
 		moveToMap ("Victory Road Kanto 3F")
+	elseif getMapName () == "Berry Tower Reception Kanto" then
+		moveToMap ("Route 13")
 	end
 end
 
