@@ -13,7 +13,7 @@
 -------------------- Config --------------------
 ------------------------------------------------
 -- If this is true
---    Please set the index of the pokemon that can DIG through mountains
+--    Please set the index of the pokemon that can DIG through mountains/caves
 --    Please make sure that you have a pokemon that knows CUT
 -- If this is false
 --    You will then need a pokemon in your team that can SURF
