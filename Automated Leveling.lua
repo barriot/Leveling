@@ -7,7 +7,7 @@
 -- If your pokemon level between 15 and 24, start the script on Route 10 (Near the Pokecenter at Route 10)
 -- If your pokemon level between 25 and 34, start the script in Digletts Cave Entrance 2
 -- If your pokemon level between 35 and 54, start the script on Route 13
--- If your pokemon level is greater than 54, start the script on Victory Road 3F
+-- If your pokemon level is greater than 54, start the script on Victory Road 3F near the exit
 
 ------------------------------------------------
 -------------------- Config --------------------
